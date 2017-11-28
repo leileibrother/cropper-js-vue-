@@ -3,7 +3,6 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import Cropper from 'cropperjs'
 
 Vue.config.productionTip = false
 

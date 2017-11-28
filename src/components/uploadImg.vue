@@ -37,8 +37,7 @@ export default {
       url: "",
       imgCropperData: {
         accept: "image/gif, image/jpeg, image/png, image/jpg"
-      },
-      fileList: ''
+      }
     };
   },
   mounted() {
@@ -62,7 +61,7 @@ export default {
         var obj = document.getElementById('change') ; 
         obj.outerHTML=obj.outerHTML; 
     },
-
+    //创建url路径
     getObjectURL(file) {
       var url = null;
       if (window.createObjectURL != undefined) {
@@ -77,6 +76,7 @@ export default {
       }
       return url;
     },
+    //input框change事件，获取到上传的文件
     change(e) {
       let files = e.target.files || e.dataTransfer.files;
       if (!files.length) return;
@@ -98,6 +98,7 @@ export default {
       }
       this.panel = true;
     },
+    //确定提交
     commit() {
       this.panel = false;
       var croppedCanvas;
@@ -113,6 +114,7 @@ export default {
       //上传图片
       this.postImg();
     },
+    //canvas画图
     getRoundedCanvas(sourceCanvas) {
       var canvas = document.createElement("canvas");
       var context = canvas.getContext("2d");
@@ -136,6 +138,7 @@ export default {
 
       return canvas;
     },
+    //提交上传函数
     postImg() {
       alert("上传成功");
       //这边写图片的上传
